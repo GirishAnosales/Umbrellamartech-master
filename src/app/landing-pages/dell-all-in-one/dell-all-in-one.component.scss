@@ -1,0 +1,151 @@
+@media screen and (min-width: 0px) {
+    .home {
+        text-align: center;
+        width: 100%;
+        background: rgb(5, 15, 135);
+        background: -moz-linear-gradient(90deg, rgba(5, 15, 135, 1) 0%, rgba(82, 9, 29, 1) 100%);
+        background: -webkit-linear-gradient(90deg, rgba(5, 15, 135, 1) 0%, rgba(82, 9, 29, 1) 100%);
+        background: linear-gradient(90deg, rgba(5, 15, 135, 1) 0%, rgba(82, 9, 29, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#050f87", endColorstr="#52091d", GradientType=1);
+
+        .h1,
+        .p {
+            margin: 0%;
+            padding: 1rem;
+        }
+
+        .r1 {
+            background-color: #fff;
+            display: none;
+
+            .r1c1 {
+                padding: 0;
+
+                .img {
+                    height: 96px;
+                    width: 96px;
+                    margin: 1rem;
+                }
+            }
+        }
+
+        .r2 {
+            .r2c1 {
+                padding: 1rem;
+
+                .h6 {
+                    padding: 1rem;
+                    text-align: start;
+                }
+
+                .form {
+                    background-color: #fff;
+                    box-shadow: 0px 0px 4px 0px #00000050;
+                    padding: 0.5rem;
+                    border-radius: 1rem;
+
+                    .r2c1r1 {
+                        padding: 1rem;
+
+                        .h6 {
+                            font-size: small;
+                            padding: 0.5rem 0;
+                            margin: 0%;
+                        }
+
+                        .s-r1 {
+
+                            .s-r1c1,
+                            .s-r1c2 {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+                            }
+                        }
+                    }
+
+                    .r2c1r1c15,
+                    .r2c1r1c17 {
+                        text-align: start;
+                    }
+
+                    .r2c1r1c15 {
+                        padding-bottom: 1rem;
+
+                        .r2c1r1c15r1 {
+                            .r2c1r1c15r1c1 {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: flex-start;
+                            }
+                        }
+                    }
+
+                    .r2c1r1c17 {
+                        padding-bottom: 1rem;
+
+                        .r2c1r1c17r1 {
+                            .r2c1r1c17r1c1 {
+                                .radio-group {
+                                    display: flex;
+                                    flex-direction: column;
+                                }
+                            }
+                        }
+                    }
+
+                    .form-button {
+                        margin-left: auto;
+                        margin-right: auto;
+                        font-size: small;
+                        width: 92%;
+                        background-color: #0777CF;
+                        color: #fff;
+                    }
+                }
+            }
+
+            .r2c2 {
+                padding: 1rem;
+
+                .mat-card {
+                    border-radius: 1rem;
+                    overflow: hidden;
+                }
+
+                .img {
+                    height: 100%;
+                    width: 100%;
+                }
+
+                .p {
+                    text-align: start;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .home {
+        .r1 {
+            .r1c1 {
+                display: flex;
+                justify-content: space-between;
+
+                .img {
+                    margin: 1rem;
+                }
+            }
+        }
+
+        .r2 {
+            .r2c2 {
+                .p {
+                    text-align: start;
+                }
+            }
+        }
+    }
+}

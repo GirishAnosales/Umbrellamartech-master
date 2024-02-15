@@ -1,0 +1,138 @@
+<div class="container-fluid home">
+
+    <div class="row r2">
+
+        <div class="col-lg-3 r2c3">
+            <img class="banner" src="../../../assets/images/dell/dell-latitude-q3/DisplayBannerDellLatitude.png"
+                alt="Dell Latitude Q3">
+        </div>
+
+        <div class="col-lg-6 r2c2">
+            <img class="img"
+                src="../../../assets/images/dell/dell-latitude-q3/09.08.2023_Dell Latitude Series CCF VF Compliance.jpg"
+                alt="Dell Latitude Q3">
+        </div>
+
+        <div class="col-lg-3 r2c1">
+            <form class="form" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+                <h6 class="h6">Complete the form below</h6>
+                <div class="row r2c1r1">
+                    <div class="col-lg-12 r2c1r1c15">
+                        <h6 class="h6">Is your organization considering a refresh, upgrade, or new deployment of any
+                            of the following technologies/solutions? (Tick all that apply) *</h6>
+                        <section class="section" name="Is your organization considering a refresh, upgrade, or new deployment of any
+							of the following technologies/solutions?" formGroupName="techSolutions">
+                            <div class="row r2c1r1c15r1">
+                                <div class="col-lg-12 r2c1r1c15r1c1">
+                                    <mat-checkbox class="mat-checkbox" [value]="'Laptops'" name="Laptops"
+                                        formControlName="laptops">
+                                        <h6 class="h6">Laptops</h6>
+                                    </mat-checkbox>
+                                    <mat-checkbox class="mat-checkbox" [value]="'Workstations'" name="Workstations"
+                                        formControlName="workstations">
+                                        <h6 class="h6">Workstations</h6>
+                                    </mat-checkbox>
+                                    <mat-checkbox class="mat-checkbox" [value]="'Data Storage'" name="Data Storage"
+                                        formControlName="dataStorage">
+                                        <h6 class="h6">Data Storage</h6>
+                                    </mat-checkbox>
+                                    <mat-checkbox class="mat-checkbox" [value]="'Monitors & Accessories'"
+                                        name="Monitors & Accessories" formControlName="monitors">
+                                        <h6 class="h6">Monitors & Accessories</h6>
+                                    </mat-checkbox>
+                                    <mat-checkbox class="mat-checkbox" [value]="'Desktops & All-In-One PCs'"
+                                        name="Desktops & All-In-One PCs" formControlName="desktops">
+                                        <h6 class="h6">Desktops & All-In-One PCs</h6>
+                                    </mat-checkbox>
+                                    <mat-checkbox class="mat-checkbox" [value]="'Servers'" name="Servers"
+                                        formControlName="servers">
+                                        <h6 class="h6">Servers</h6>
+                                    </mat-checkbox>
+                                    <mat-checkbox class="mat-checkbox" [value]="'Networking'" name="Networking"
+                                        formControlName="networking">
+                                        <h6 class="h6">Networking</h6>
+                                    </mat-checkbox>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-lg-12 r2c1r1c17">
+                        <h6 class="h6">If yes, what is the time frame within which you are looking to implement the
+                            above solutions?</h6>
+                        <mat-form-field appearance="fill" style="font-size: small; width: 100%;">
+                            <mat-label class="mat-label" style="font-size: small;">Options</mat-label>
+                            <mat-select class="input"
+                                name="If yes, what is the time frame within which you are looking to implement the above solutions ?"
+                                style="font-size: small;" formControlName="timeFrame">
+                                <mat-option style="font-size: small;" *ngFor="let week of weeks" [value]="week.value">
+                                    {{week.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-lg-12 r2c1r1c17">
+                        <h6 class="h6">Has your organization allocated a budget for the above-mentioned requirement?
+                        </h6>
+                        <div class="row r2c1r1c17r1">
+                            <div class="col-lg-12 r2c1r1c17r1c1">
+                                <mat-radio-group class="radio-group"
+                                    name="Has your organization allocated a budget for the above-mentioned requirement?"
+                                    formControlName="allocatedBudget">
+                                    <mat-radio-button class="radio-button" *ngFor="let budget of budgets"
+                                        [value]="budget.value"> {{budget.viewValue}} </mat-radio-button>
+                                </mat-radio-group>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 r2c1r1c1">
+                        <h6 class="h6">Would you like to get a call from
+                            Dell Tech Advisor to suggest you the best fit for your tech requirements?</h6>
+                        <mat-form-field appearance="fill" style="font-size: small; width: 100%;">
+                            <mat-label class="mat-label" style="font-size: small;">Yes or No</mat-label>
+                            <mat-select class="input"
+                                name="Would you like to be contacted by a Dell Technologies Advisor to discuss your IT requirements?"
+                                style="font-size: small;" formControlName="contactAgain">
+                                <mat-option style="font-size: small;" *ngFor="let yesOrNo of contactAgain"
+                                    [value]="yesOrNo.value">
+                                    {{yesOrNo.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-lg-12 r2c1r1c17">
+                        <h6 class="h6">Employee Size [Optional]</h6>
+                        <mat-form-field appearance="fill" style="font-size: small; width: 100%;">
+                            <mat-label class="mat-label" style="font-size: small;">Options</mat-label>
+                            <mat-select class="input"
+                                name="If yes, what is the time frame within which you are looking to implement the above solutions ?"
+                                style="font-size: small;" formControlName="timeFrame">
+                                <mat-option style="font-size: small;" *ngFor="let size of employeeSize"
+                                    [value]="size.value">
+                                    {{size.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- CONSENT -->
+                    <div class="col-lg-12 r2c1r1c17">
+                        <div class="consent-checkbox">
+                            <mat-checkbox class="mat-checkbox" formControlName="consent">Stay in touch</mat-checkbox>
+                            <p class="p consent-text1">Yes, please stay in touch by email & phone. <a
+                                    href="https://i.dell.com/sites/csdocuments/Legal_Docs/en/List-of-Dell-Technologies-Entities-for-Privacy-Statement.pdf"
+                                    target="_blank">Dell Technologies and its group of companies</a> would love to stay
+                                in touch and to keep you updated on products, services, solutions, exclusive offers, and
+                                special events. For information on how we protect your personal data, see our <a
+                                    href="https://www.dell.com/learn/in/en/incorp1/policies-privacy?c=in&cs=incorp1&l=en&s=corp" target="_blank">Privacy
+                                    Statement</a>. You can <a
+                                    href="https://www.dell.com/preferences/listremoval/?l=EN&c=IN" target="_blank">unsubscribe</a> at
+                                any time.</p>
+                        </div>
+                    </div>
+
+                    <button class="form-button" mat-raised-button [disabled]="form.invalid" type="submit">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

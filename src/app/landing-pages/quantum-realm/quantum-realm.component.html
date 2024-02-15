@@ -1,0 +1,163 @@
+<div class="container-fluid home">
+
+    <div class="row r1">
+        <div class="col-lg-12 r1c1">
+            <video class="video" autoplay muted loop>
+                <source src="../../../assets/images/quantum-realm/banner.mp4" type="video/mp4">
+                <img src="../../../assets/images/quantum-realm/banner-img.jpg" alt="Abstract Background">
+            </video>
+
+            <a href="#" class="button" mat-button (click)="navigateToForm($event)">Register Now</a>
+
+            <div class="date-time-group">
+                <div class="date">
+                    <img src="../../../assets/images/quantum-realm/ic1.png" alt="date-icon" class="date-icon">
+                    <p class="date-text">27 July 2023</p>
+                </div>
+                <div class="time">
+                    <img src="../../../assets/images/quantum-realm/ic2.png" alt="time-icon" class="time-icon">
+                    <p class="time-text">2:00 PM to 5:30 PM IST</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row r2">
+        <div class="col-md-7 r2c1">
+            <h1 class="h1">{{r2.title}}</h1>
+            <p class="p" *ngFor="let data of r2.content">{{data.text}}</p>
+        </div>
+    </div>
+
+    <div class="row r3">
+        <div class="col-lg-5 r3c1">
+            <h1 class="h1">Agenda</h1>
+            <mat-accordion class="mat-accordion">
+                <mat-expansion-panel class="mat-expansion-panel" expanded="true" hideToggle>
+                    <mat-expansion-panel-header class="mat-expansion-panel-header">
+                        <mat-panel-title class="mat-panel-title">India</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="r3-data" *ngFor="let data of r3">
+                        <p class="p time">{{data.time}}</p>
+                        <p class="p name">{{data.name}}</p>
+                        <p class="p designation">{{data.designation}}</p>
+                        <p class="p company">{{data.company}}</p>
+                        <p class="p role">{{data.role}}</p>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="col-lg-5 r3c2" id="form">
+            <form class="form" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+                <h1 class="h1">Sign Up</h1>
+                <h6 class="h6">To Fast-track Your Quantum Quest!</h6>
+                <div class="row r3c2r1">
+
+                    <!-- NAME -->
+                    <div class="col-lg-12 r3c2r1c1">
+                        <mat-form-field class="mat-form-field" style="font-size: small; width: 100%;" appearance="fill">
+                            <mat-label class="mat-label" style="font-size: small;">Name</mat-label>
+                            <input name="Name" type="text" class="input" formControlName="name" matInput>
+                            <mat-error *ngIf="name.hasError('required')">
+                                Name is <strong>required.</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- EMAIL -->
+                    <div class="col-lg-12 r3c2r1c1">
+                        <mat-form-field class="mat-form-field" style="font-size: small; width: 100%;" appearance="fill">
+                            <mat-label class="mat-label" style="font-size: small;">Email</mat-label>
+                            <input name="Email" type="email" class="input" formControlName="email"
+                                placeholder="name@company_name.com" matInput>
+                            <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+                                Please enter a <strong>valid</strong> Email address.
+                            </mat-error>
+                            <mat-error *ngIf="email.hasError('required')">
+                                Email is <strong>required.</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- PHONE -->
+                    <div class="col-lg-12 r3c2r1c1">
+                        <mat-form-field class="mat-form-field" style="font-size: small; width: 100%;" appearance="fill">
+                            <mat-label class="mat-label" style="font-size: small;">Phone</mat-label>
+                            <input name="Phone" type="tel" class="input" formControlName="phone" matInput>
+                            <mat-error *ngIf="phone.hasError('required')">
+                                Phone number is <strong>required.</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- COUNTRY -->
+                    <div class="col-lg-12 r3c2r1c1">
+                        <mat-form-field class="mat-form-field" style="font-size: small; width: 100%;" appearance="fill">
+                            <mat-label class="mat-label" style="font-size: small;">Country</mat-label>
+                            <mat-select [disabled]="true" value="option1">
+                                <mat-option value="option1">India</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- ORGANIZATION -->
+                    <div class="col-lg-12 r3c2r1c1">
+                        <mat-form-field class="mat-form-field" style="font-size: small; width: 100%;" appearance="fill">
+                            <mat-label class="mat-label" style="font-size: small;">Organization</mat-label>
+                            <input name="Organization" type="text" class="input" formControlName="organization"
+                                matInput>
+                            <mat-error *ngIf="organization.hasError('required')">
+                                Organization is <strong>required.</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- DESIGNATION -->
+                    <div class="col-lg-12 r3c2r1c1">
+                        <mat-form-field class="mat-form-field" style="font-size: small; width: 100%;" appearance="fill">
+                            <mat-label class="mat-label" style="font-size: small;">Designation</mat-label>
+                            <input name="Designation" type="text" class="input" formControlName="designation" matInput>
+                            <mat-error *ngIf="designation.hasError('required')">
+                                Designation is <strong>required.</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- POSTAL CODE -->
+                    <div class="col-lg-12 r3c2r1c1">
+                        <mat-form-field class="mat-form-field" style="font-size: small; width: 100%;" appearance="fill">
+                            <mat-label class="mat-label" style="font-size: small;">Postal Code</mat-label>
+                            <input name="Postal Code" type="number" class="input" formControlName="postalCode" matInput>
+                            <mat-error *ngIf="postalCode.hasError('required')">
+                                Postal code is <strong>required.</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- CONSENT -->
+                    <div class="col-lg-12 r3c2r1c1">
+                        <div class="consent-checkbox">
+                            <mat-checkbox class="mat-checkbox" formControlName="consent">Accept</mat-checkbox>
+                            <p class="p consent-text1">{{consent.text1}}</p>
+                            <p class="p consent-text1">{{consent.text2}}</p>
+                        </div>
+                    </div>
+
+                    <button class="submit-button" color="primary" [disabled]="form.invalid" mat-raised-button
+                        type="submit">Submit</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row r4">
+        <h1 class="h1">{{r4_title}}</h1>
+        <div class="col-md-4 r4c1" *ngFor="let data of r3">
+            <img class="img" [src]="data.imageURL" [alt]="data.name">
+            <h6 class="h6 name">{{data.name}}</h6>
+            <p class="p designation">{{data.designation}}</p>
+            <p class="p company">{{data.company}}</p>
+        </div>
+    </div>
+</div>
